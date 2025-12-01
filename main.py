@@ -71,7 +71,20 @@ if users.get(username) == password:
     print(f"There are {len(numeric_strings)} numeric strings.")
     print(f"The sum of all the numbers {sum(numeric_values)}.")
     print("-" * 35)
-    
+    print("LEN |       OCCURRENCES       | NR.")
+    print("-" * 35)
+
+    word_length_counts = {}
+    # Count occurrences of each word length
+    for word in words:
+        clean_word = word.strip(".,")
+        length = len(clean_word)
+        # If the key (length) does not exist yet, it uses the default value of 0
+        word_length_counts[length] = word_length_counts.get(length, 0) + 1
+    for length in sorted(word_length_counts):
+        count = word_length_counts[length]
+        print(f"{length:>3} | {'*' * count:<23} | {count}")
+
 else:
     print("Unregistered user or incorrect password. Exiting the program.")
     exit()
