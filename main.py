@@ -79,7 +79,7 @@ if users.get(username) == password:
     for word in words:
         clean_word = word.strip(".,")
         length = len(clean_word)
-        # If the key (length) does not exist yet, it uses the default value of 0
+        # If the key (length) does not exist, use the default value of 0
         word_length_counts[length] = word_length_counts.get(length, 0) + 1
     for length in sorted(word_length_counts):
         count = word_length_counts[length]
