@@ -32,9 +32,22 @@ users = {
     "bob": "123", 
     "ann": "pass123", 
     "mike": "password123", 
-    "liz": "pass123"}
+    "liz": "pass123"
+}
 
 print("Welcome to the Text Analyzer!")
+print("Enter your username and password.")
+
 username = input("Username: ")
 password = input("Password: ")
+
+if users.get(username) == password:
+    print(f"Welcome {username}!")
+    print(f"We have {len(TEXTS)} texts to be analyzed.")
+    text_choice = input(
+        f"Enter a number between 1 and {len(TEXTS)} to select a text: ")
+    print(text_choice)
+else:
+    print("Unregistered user or incorrect password. Exiting the program.")
+    exit()
 
