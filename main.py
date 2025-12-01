@@ -60,11 +60,17 @@ if users.get(username) == password:
     title_words = [word for word in words if word.istitle()]
     uppercase_words = [word for word in words if word.isupper()]
     lowercase_words = [word for word in words if word.islower()]
+    numeric_strings = [word for word in words if word.isdigit()]
+    numeric_values = [int(word) for word in numeric_strings]
     
+    print("-" * 35)
     print(f"There are {len(words)} words in the selected text.")
     print(f"There are {len(title_words)} titlecase words.")
     print(f"There are {len(uppercase_words)} uppercase words.")
     print(f"There are {len(lowercase_words)} lowercase words.")
+    print(f"There are {len(numeric_strings)} numeric strings.")
+    print(f"The sum of all the numbers {sum(numeric_values)}.")
+    print("-" * 35)
     
 else:
     print("Unregistered user or incorrect password. Exiting the program.")
